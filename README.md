@@ -1,4 +1,5 @@
-# Desenho-amostral-UERJ
+# Desenho-amostral-UERJ 
+
 Scripts utilizados durante a disciplina de desenho amostral
 
 
