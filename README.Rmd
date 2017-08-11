@@ -1,0 +1,29 @@
+---
+title: "DESENHO AMOSTRAL - UERJ"
+date: "11 de agosto de 2017"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada na UERJ para a graduação em ciências biológicas serão disponibilizados aqui por aqui!
+
+
+A disciplina é ministrada pela professora Dra. Helena Bergallo.
+
+
+O site segue a seguinte organização:
+
+
+Pasta | Arquivo
+------ | -------
+Scripts | scripts brutos para serem rodados em sala de aula
+Aulas | Scripts trabalhados e detalhados para estudo individual
+Artigos | Leituras sugeridas 
+Outros | Mix de conteúdos aleatórios pertinentes!
+
+
