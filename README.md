@@ -1,6 +1,20 @@
 # Desenho-amostral-UERJ 
 
 
-Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada na UERJ para a graduação em ciências biológicas.
+Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada na UERJ para a graduação em ciências biológicas serão disponibilizados aqui por aqui!
 
-A disciplina é ministrada juntamente com a professora Dr. Helena Bergallo, responsável pela disciplina.
+
+A disciplina é ministrada pela professora Dra. Helena Bergallo. A partir desse site será possível.
+
+
+O site segue a seguinte organização:
+
+
+Pasta | Arquivo
+------ | -------
+Scripts | scripts brutos para serem rodados em sala de aula
+Aulas | Scripts trabalhados e detalhados para estudo individual
+Artigos | Leituras sugeridas 
+Outros | Mix de conteúdos aleatórios pertinentes!
+
+
