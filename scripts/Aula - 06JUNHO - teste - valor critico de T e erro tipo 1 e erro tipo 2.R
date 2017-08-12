@@ -1,5 +1,5 @@
 #=========================================================================
-#			AULA 1 - DistribuiÁıes e valores crÌticos
+#			AULA 1 - Distribui√ß√µes e valores cr√≠ticos
 #=========================================================================
 
 tamanho<-read.table(file.choose(),header=T)
@@ -27,7 +27,7 @@ diff(mediasaleat)
 diff(medSex)
 
 
-########	MODIFICA«√O DA FUN«√O DIFF (para invers„o de sinal)	##########
+########	MODIFICA√á√ÉO DA FUN√á√ÉO DIFF (para invers√£o de sinal)	##########
 
 edit(diff.default)
 
@@ -51,7 +51,7 @@ dif<-function (x, lag = 1, differences = 1, ...) {
     r
 }
 
-################			TERMINO DA FUN«√O				############
+################			TERMINO DA FUN√á√ÉO				############
 
 
 dif(mediasaleat)
@@ -79,14 +79,14 @@ length(which(abs(difPERMU)>abs(difOBS)))
 #=========================================================================
 
 
-#comparando os gr·ficos gerados nas ultimas aulas com a diferenÁas existentes
+#comparando os gr√°ficos gerados nas ultimas aulas com a diferen√ßas existentes
 
-#distribuiÁ„o de diferenÁas geradas por aleatorizaÁ„o 
+#distribui√ß√£o de diferen√ßas geradas por aleatoriza√ß√£o 
 hist(difPERMU,col="green",xlim=c(-15,20)) 
 abline(v=mean(difPERMU),col="blue",lty=2,ltw=2,lwd=2)
 
 
-#PARES DE ALTURAS FORAM COMPARADAS ALEATORIAMENTE, POR…M SEMPRE ENTRE HOMENS E MULHERES!
+#PARES DE ALTURAS FORAM COMPARADAS ALEATORIAMENTE, POR√âM SEMPRE ENTRE HOMENS E MULHERES!
 difpair<-cbind(-5,
 9,
 7,
@@ -94,7 +94,7 @@ difpair<-cbind(-5,
 13)
 
 
-#distribuiÁ„o das diferenÁas comparadas entre pares aleatÛrios (porÈm sempre entre homens e mulheres)
+#distribui√ß√£o das diferen√ßas comparadas entre pares aleat√≥rios (por√©m sempre entre homens e mulheres)
 hist(difpair,add=T,col="yellow")
 abline(v=difOBS,col="red",lty=2,lwd=2)
 
@@ -106,11 +106,11 @@ length(which(abs(difPERMU)>abs(difOBS)))
 ######################		teste T	############################
 ######################################################################
 
-#realizando a an·lise de Teste-T na m„o
+#realizando a an√°lise de Teste-T na m√£o
 round((difOBS-0)/((5.03 + 4.76)/sqrt(length(tamanho$alturas))),3)
 
 
-#utilizando a funÁ„o t.test, disponÌvel no default do R
+#utilizando a fun√ß√£o t.test, dispon√≠vel no default do R
 
 p.obs<-t.test(tamanho$alturas~ tamanho$sexo)
 
@@ -124,8 +124,8 @@ p.obs
 #			AULA 2/PARTE2 - ERROS TIPO 1 E ERROS TIPO 2
 #=========================================================================================
 
-#Podemos tambÈm simular valores de T e compar·-los com as diferenÁas obtidas
-#a partir de diversas aleatorizaÁıes.
+#Podemos tamb√©m simular valores de T e compar√°-los com as diferen√ßas obtidas
+#a partir de diversas aleatoriza√ß√µes.
 
 #simulando valores de T
 tsPERMU = replicate(100,t.test(sample(tamanho$alturas)~ tamanho$sexo)$statistic)
@@ -133,7 +133,7 @@ tsPERMU = replicate(100,t.test(sample(tamanho$alturas)~ tamanho$sexo)$statistic)
 #plotando valores de T
 hist(tsPERMU,col="grey90",xlim=c(-5,5))
 
-#perceba que, assim como a difPERMU, os valores de teste.t tambÈm giram
+#perceba que, assim como a difPERMU, os valores de teste.t tamb√©m giram
 # em torno de 0
 
 #guardando apenas o valor de T do teste T da nossa amostragem
@@ -163,7 +163,7 @@ abline(v=c(a,b,c,d,e),col="lightpink",lwd=2)
 
 help(col)
 
-#Calcula o valor crÌtico de diferenÁa na distribuiÁ„o para (alfa e N)
+#Calcula o valor cr√≠tico de diferen√ßa na distribui√ß√£o para (alfa e N)
 qt(.95, df = c(1:10,20,50,100,1000))
 qt(.975, df = c(1:10,20,50,100,1000))
 qt(.999, df = c(1:10,20,50,100,1000))
