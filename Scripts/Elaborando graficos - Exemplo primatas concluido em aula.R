@@ -1,14 +1,14 @@
 #####################################################################
-#####                 Elaborando gr·ficos no R            ###########
+#####                 Elaborando gr√°ficos no R            ###########
 #####################################################################
 
-#Antes de comeÁarmos a elaborar os gr·ficos no R
-#precisamos possuir e informar ao R quais s„o os dados que 
-#desejamos colocar nos gr·ficos!
+#Antes de come√ßarmos a elaborar os gr√°ficos no R
+#precisamos possuir e informar ao R quais s√£o os dados que 
+#desejamos colocar nos gr√°ficos!
 
 #Informando os dados manualmente
 
-#Criando vetores numÈricos
+#Criando vetores num√©ricos
 
 arvores<-as.vector(cbind(20,19,17,17,19))
 PrimatasAno1<-as.vector(cbind(22,20,17,18,22))
@@ -18,7 +18,7 @@ PrimatasAno2<-as.vector(cbind(22,22,22,23,21))
 PrimatasAno2
 PrimatasAno1
 
-#armazenando esses vetores em uma ˙nica tabela
+#armazenando esses vetores em uma √∫nica tabela
 
 tabela1<-as.data.frame(cbind(arvores,PrimatasAno1,PrimatasAno2))
 
@@ -33,7 +33,7 @@ help(plot)
 plot(tabela1)
 
 ################################################################################
-#			ELABORANDO O MESMO GR¡FICO DA MESMA FORMA
+#			ELABORANDO O MESMO GR√ÅFICO DA MESMA FORMA
 ################################################################################
 
 a<-read.table(file.choose(),header=TRUE)
