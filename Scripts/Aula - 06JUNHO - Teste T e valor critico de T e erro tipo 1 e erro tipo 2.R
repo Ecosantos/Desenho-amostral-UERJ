@@ -2,6 +2,7 @@
 #			AULA 1 - Distribuições e valores críticos
 #=========================================================================
 
+#AINDA UTILIZANDOS OS DADOS REFERENTE ÀS ALTURAS AMOSTRADAS
 tamanho<-read.table(file.choose(),header=T)
 attach(tamanho)
 
