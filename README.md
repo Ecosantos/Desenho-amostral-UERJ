@@ -14,5 +14,6 @@ Pasta | Arquivo
 ------ | -------
 Scripts | scripts brutos para serem rodados em sala de aula
 Aulas | Scripts trabalhados e detalhados para estudo individual
+Dados | Dados utilizados durante as aulas
 Artigos | Leituras sugeridas 
 Outros | Mix de conteúdos aleatórios pertinentes!
