@@ -4,7 +4,7 @@
 Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada na UERJ para a graduação em ciências biológicas serão disponibilizados aqui!
 
 
-A disciplina é ministrada pela professora Dra. Helena Bergallo.
+A disciplina é ministrada por mim e pela professora responsável Dra. Helena Bergallo.
 
 
 O site segue a seguinte organização:
