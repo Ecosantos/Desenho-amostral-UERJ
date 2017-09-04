@@ -1,11 +1,11 @@
 # Desenho-amostral-UERJ 
-## Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
+### Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
 Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada para a graduação em ciências biológicas da UERJ serão disponibilizados aqui!
 
 
 A disciplina é ministrada por mim e pela professora responsável Dra. Helena Bergallo.
 
-### Organização do site
+## Organização do site
 O site segue a seguinte organização:
 
 
