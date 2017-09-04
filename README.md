@@ -41,4 +41,8 @@ Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser in
 
 ## Outros detalhes sobre o R
 
-Em breve
+#### Em construção 
+
+Alguns pacotes disponíveis para você procurar métodos, técnicas e exemplos: https://cran.r-project.org/web/packages/available_packages_by_date.html
+
+
