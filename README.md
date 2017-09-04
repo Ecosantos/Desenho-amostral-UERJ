@@ -1,12 +1,11 @@
 # Desenho-amostral-UERJ 
-
-
+## Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
 Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada para a graduação em ciências biológicas da UERJ serão disponibilizados aqui!
 
 
 A disciplina é ministrada por mim e pela professora responsável Dra. Helena Bergallo.
 
-
+## Organização do site
 O site segue a seguinte organização:
 
 
@@ -19,7 +18,7 @@ Artigos | Leituras sugeridas
 Outros | Mix de conteúdos aleatórios pertinentes!
 
 
-# Instalando o R
+## Instalando o R
 
 
 Durante a disciplina iremos utilizar o software R que pode ser baixado gratuitamente no link:
@@ -40,6 +39,6 @@ Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser in
 
 
 
-# Outros detalhes sobre o R
+## Outros detalhes sobre o R
 
-
+Em breve
