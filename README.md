@@ -5,7 +5,7 @@ Dados, scripts e outros documentos importantes para a disciplina de desenho amos
 
 A disciplina é ministrada por mim e pela professora responsável Dra. Helena Bergallo.
 
-## Organização do site
+### Organização do site
 O site segue a seguinte organização:
 
 
