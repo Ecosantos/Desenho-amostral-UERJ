@@ -60,4 +60,4 @@ mine_sweeper(width = 5, height = 5, mines = 1, text.cex = 2, cheat = TRUE, seed 
 #A ideia é que todos tenham acesso à programação, sejam livres para criar seus próprios comandos e modificar a vontade os comandos já existentes
 #Viva a pirataria, cultura e conhecimento com livre e irrestrito acesso a todas as pessoas!!!
 
-
+.
