@@ -175,3 +175,4 @@ l$child.ages
 #criar matrizes (matrix)
 #perguntar qual o tipo de vetor estamos trabalhando (is.factor/is.numeric/is.vector)
 
+.
