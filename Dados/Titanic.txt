@@ -1,4 +1,4 @@
-Classe	Sobrevivente	Sexo	Idade	Nome
+Classe	Sobrevivente	Sexo	Idade	Nomes
 3	0	H	33	Markun,Mr.Johann
 1	1	M	37	Minahan,Mrs.WilliamEdward(LillianEThorpe)
 3	0	H	27	Foley,Mr.Joseph
