@@ -103,7 +103,7 @@ Curiosamente  o R não possui no seu pacote básico funções para avaliar essas
 
 #### Erro padrão
 
-Bom, sabemos que a formula para calcular o Erro padrão da média (ou *Stardard error*, em inglês) do nosso objeto ``x`` (![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$)) é dividir o desvio padrão, obtido com a função ``sd()`` e representado pela letra sigma (![equation](https://latex.codecogs.com/gif.latex?\sigma)) pela raiz quadrada do tamanho amostral ``n``, ou seja: (![equation](https://latex.codecogs.com/gif.latex?\rfrac{\sigma}{\sqrt{n}})). Logo, podemos juntar todas essas informações em uma única equação e teremos:
+Bom, sabemos que a formula para calcular o Erro padrão da média (ou *Stardard error*, em inglês) (![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$)) do nosso objeto ``x`` é o desvio padrão, obtido com a função ``sd()`` e representado pela letra sigma (![equation](https://latex.codecogs.com/gif.latex?\sigma)), dividido pela raiz quadrada do tamanho amostral ``n``, ou seja: (![equation](https://latex.codecogs.com/gif.latex?\frac{\sigma}{\sqrt{n}})). Logo, podemos juntar todas essas informações em uma única equação e teremos:
 
 ![equation](https://latex.codecogs.com/gif.latex?$$SE_{\bar{x}}&space;=&space;\frac{\sigma}{\sqrt{n}}$$)
 
