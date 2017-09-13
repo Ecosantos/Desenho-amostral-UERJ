@@ -6,43 +6,43 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Estatística descritiva
+## EstatÃ­stica descritiva
 
-### Introdução
+### IntroduÃ§Ã£o
 
-#### Vamos começar por uma definição mais formal:
+#### Vamos comeÃ§ar por uma definiÃ§Ã£o mais formal:
 ##### O que a Wikipedia tem a nos dizer sobre a Estatistica descritiva?
-A estatística descritiva é um ramo da estatística que aplica várias técnicas para descrever e sumarizar um conjunto de dados. Diferencia-se da estatística inferencial, ou estatística indutiva, pelo objectivo: organizar, sumarizar dados ao invés de usar os dados em aprendizado sobre a população. Esse princípio faz da estatística descritiva independente.
+A estatÃ­stica descritiva Ã© um ramo da estatÃ­stica que aplica vÃ¡rias tÃ©cnicas para descrever e sumarizar um conjunto de dados. Diferencia-se da estatÃ­stica inferencial, ou estatÃ­stica indutiva, pelo objectivo: organizar, sumarizar dados ao invÃ©s de usar os dados em aprendizado sobre a populaÃ§Ã£o. Esse princÃ­pio faz da estatÃ­stica descritiva independente.
 
-Algumas medidas que são normalmente usadas para descrever um conjunto de dados são medidas de tendência central e medidas de variabilidade ou dispersão. Medidas de tendência central incluem média,mediana e moda. Medidas de variabilidade incluem desvio padrão,variância, o valor máximo e mínimo, obliquidade e curtose.
+Algumas medidas que sÃ£o normalmente usadas para descrever um conjunto de dados sÃ£o medidas de tendÃªncia central e medidas de variabilidade ou dispersÃ£o. Medidas de tendÃªncia central incluem mÃ©dia,mediana e moda. Medidas de variabilidade incluem desvio padrÃ£o,variÃ¢ncia, o valor mÃ¡ximo e mÃ­nimo, obliquidade e curtose.
 
 #### OK, agora com outras palavras:
-As vezes pode até parecer complicado, mas não precisa se preocupar, toda essa parte descritiva você pratica diariamente dividindo uma conta de bar, a conta da pizza com os amigos. Muitas vezes você faz isso intuitivamente, dividindo ao falar que uma espécie é maior que a outra, comparando a altura das pessoas em paises diferentes. A gente até vai dar uma complicada nisso, mas se você focar em comparar dois grupos distintos, como por exemplo, duas espécies, dois grupos de pacientes ou pessoas de outros paises vc vai conseguir visualizar tudo que vamos tentar fazer aqui.
+As vezes pode atÃ© parecer complicado, mas nÃ£o precisa se preocupar, toda essa parte descritiva vocÃª pratica diariamente dividindo uma conta de bar, a conta da pizza com os amigos. Muitas vezes vocÃª faz isso intuitivamente, dividindo ao falar que uma espÃ©cie Ã© maior que a outra, comparando a altura das pessoas em paises diferentes. A gente atÃ© vai dar uma complicada nisso, mas se vocÃª focar em comparar dois grupos distintos, como por exemplo, duas espÃ©cies, dois grupos de pacientes ou pessoas de outros paises vc vai conseguir visualizar tudo que vamos tentar fazer aqui.
 
 
 
-### Vamos colocar a mão na massa (de dados)
+### Vamos colocar a mÃ£o na massa (de dados)
 
 ####  Exemplo
 
-Primeiro vamos criar um exemplo hipótético.
+Primeiro vamos criar um exemplo hipÃ³tÃ©tico.
 
-Nesse exemplo, vamos criar um objeto ``x`` que vai conter 20 números aleatórios
+Nesse exemplo, vamos criar um objeto ``x`` que vai conter 20 nÃºmeros aleatÃ³rios
 
 ```{r}
 x<-c(1,25,32,41,57,62,71,1)
 # Lembrando que:
-#  "x" é o objeto que vai armazenar todos esses números
-#  "c" é a função para agrupar várias informações
+#  "x" Ã© o objeto que vai armazenar todos esses nÃºmeros
+#  "c" Ã© a funÃ§Ã£o para agrupar vÃ¡rias informaÃ§Ãµes
 ```
 ```{r, echo=FALSE}
 x
 ```
 
-A estatistica descritiva não tem nenhum segredo e vai ser bem parecida com o Excel nesse ponto. Basicamente você só precisa dizer o que você quer fazer e inserir qual o conjunto de dados alvo da ação.
+A estatistica descritiva nÃ£o tem nenhum segredo e vai ser bem parecida com o Excel nesse ponto. Basicamente vocÃª sÃ³ precisa dizer o que vocÃª quer fazer e inserir qual o conjunto de dados alvo da aÃ§Ã£o.
 
 
 
@@ -68,12 +68,12 @@ max(x)
 min(x)
 ```
 
-#### Variância
+#### VariÃ¢ncia
 ```{r}
 var(x)
 ```
 
-#### Desvio padrão.
+#### Desvio padrÃ£o.
 
 
 ```{r}
@@ -81,27 +81,27 @@ sd(x)
 ```
 
 
-Por definição estatística, o Desvio padrão é a raiz quadrada da variância. 
+Por definiÃ§Ã£o estatÃ­stica, o Desvio padrÃ£o Ã© a raiz quadrada da variÃ¢ncia. 
 
 
-Horas, se sabendo que a variância pode ser calculada pela função ``var()`` e que o a raiz quadrada pode ser calculada pela função ``sqrt()`` (abreviação para "square root", ou raiz quadrada em inglês) então basta apenas criarmos uma função dentro da outra para chega. Vamos testar!
+Horas, se sabendo que a variÃ¢ncia pode ser calculada pela funÃ§Ã£o ``var()`` e que o a raiz quadrada pode ser calculada pela funÃ§Ã£o ``sqrt()`` (abreviaÃ§Ã£o para "square root", ou raiz quadrada em inglÃªs) entÃ£o basta apenas criarmos uma funÃ§Ã£o dentro da outra para chega. Vamos testar!
 
 ```{r}
 sqrt(var(x))
 ```
-Agrupar uma ou mais funções dentro de um único comando é algo bem comum, mas quando estamos começando pode se tornar um pouco confuso mesmo, dessa forma, uma sugestão seria fazer o mesmo comando passo a passo.
+Agrupar uma ou mais funÃ§Ãµes dentro de um Ãºnico comando Ã© algo bem comum, mas quando estamos comeÃ§ando pode se tornar um pouco confuso mesmo, dessa forma, uma sugestÃ£o seria fazer o mesmo comando passo a passo.
 
 
-Ou seja, primeiro avaliamos a variância e armazenamos o resultado dentro de um obeto e em seguida executamos a função da raiz quadrada no objeto que criamos.
+Ou seja, primeiro avaliamos a variÃ¢ncia e armazenamos o resultado dentro de um obeto e em seguida executamos a funÃ§Ã£o da raiz quadrada no objeto que criamos.
 
 ```{r}
 variancia<-var(x)
-# Armazenamos o valor da função "var" dentro do objeto chamado "variancia"
+# Armazenamos o valor da funÃ§Ã£o "var" dentro do objeto chamado "variancia"
 
 sqrt(variancia)
 ```
 
-Compare agora as 3 diferentes formas que utilizamos para calcular o desvio padrão
+Compare agora as 3 diferentes formas que utilizamos para calcular o desvio padrÃ£o
 ```{r}
 sd(x)
 sqrt(var(x))
@@ -109,17 +109,17 @@ sqrt(variancia)
 ```
 
 
-#### Moda e erro padrão
-Curiosamente  o R não possui no seu pacote básico funções para avaliar essas medidas, mas podemos fazer tudo isso facilmente. Vamos começar pelo erro padrão.
+#### Moda e erro padrÃ£o
+Curiosamente  o R nÃ£o possui no seu pacote bÃ¡sico funÃ§Ãµes para avaliar essas medidas, mas podemos fazer tudo isso facilmente. Vamos comeÃ§ar pelo erro padrÃ£o.
 
-#### Erro padrão
+#### Erro padrÃ£o
 
-Bom, sabemos [^1] que a formula para calcular o Erro padrão ($SE_{\bar{x}}$) é a variância ($\sigma$) dividida pela raiz quadrada do tamanho amostral **n** $\frac{\sigma}{\sqrt{n}}$, logo, juntando todos esses fatores temos:
+Bom, sabemos [^1] que a formula para calcular o Erro padrÃ£o ($SE_{\bar{x}}$) Ã© a variÃ¢ncia ($\sigma$) dividida pela raiz quadrada do tamanho amostral **n** $\frac{\sigma}{\sqrt{n}}$, logo, juntando todos esses fatores temos:
 
 
 $$SE_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
 
-[^1]: Mentira precisei copiar da internet pq não iria lembrar nunca de cabeça XD
+[^1]: Mentira precisei copiar da internet pq nÃ£o iria lembrar nunca de cabeÃ§a XD
 
 
 Nesse caso vamos utilizar o seguinte comando:
@@ -128,7 +128,7 @@ Nesse caso vamos utilizar o seguinte comando:
 sd(x)/sqrt(length(x))
 ```
 #### MODA
-Diferente das demais funções, a Moda não está disponível na função básica do R e apesar de podermos criá-la, será mais prática utilizarmos um uma extensão (*pacote*) do R de alguém que já criou isso. Vamos utilizar o pacote "modeest" e para instalá-lo vamos utilizar a função ``install.packages()``. Mais uma vez é só copiar e colar a função no seu R.  
+Diferente das demais funÃ§Ãµes, a Moda nÃ£o estÃ¡ disponÃ­vel na funÃ§Ã£o bÃ¡sica do R e apesar de podermos criÃ¡-la, serÃ¡ mais prÃ¡tica utilizarmos um uma extensÃ£o (*pacote*) do R de alguÃ©m que jÃ¡ criou isso. Vamos utilizar o pacote "modeest" e para instalÃ¡-lo vamos utilizar a funÃ§Ã£o ``install.packages()``. Mais uma vez Ã© sÃ³ copiar e colar a funÃ§Ã£o no seu R.  
 ```{r}
 # install.packages("modeest") (retirar o "#")
 ```
@@ -141,11 +141,11 @@ mfv(x)
 
 
 #### Resumindo tudo
-Algumas vezes precisamos de um conjunto de medidas descritivas de uma mesma variável, nesse caso a função ``summary()`` resolve o nosso problema. 
+Algumas vezes precisamos de um conjunto de medidas descritivas de uma mesma variÃ¡vel, nesse caso a funÃ§Ã£o ``summary()`` resolve o nosso problema. 
 
-Essa função é bem genérica e pode tanto nos dar as medidas descritivas de uma variável de nosso interesse, quanto os resultados de uma análise complexa. Ainda vamos utilizar muito essa função, então você vai acabar decorando ela. 
+Essa funÃ§Ã£o Ã© bem genÃ©rica e pode tanto nos dar as medidas descritivas de uma variÃ¡vel de nosso interesse, quanto os resultados de uma anÃ¡lise complexa. Ainda vamos utilizar muito essa funÃ§Ã£o, entÃ£o vocÃª vai acabar decorando ela. 
 
-A função ``sumarry()`` retorna automaticamente os valores mínimo, máximo, média e mediana, além dos valores de 2º e 3º Quartil, que são os valores utilizados para fazer gráficos do tipo boxplot. Em breve vamos entrar nesse assunto novamente.
+A funÃ§Ã£o ``sumarry()`` retorna automaticamente os valores mÃ­nimo, mÃ¡ximo, mÃ©dia e mediana, alÃ©m dos valores de 2Âº e 3Âº Quartil, que sÃ£o os valores utilizados para fazer grÃ¡ficos do tipo boxplot. Em breve vamos entrar nesse assunto novamente.
 
 ```{r}
 summary(x)
@@ -153,22 +153,22 @@ summary(x)
 
 ### Exemplo 2
 
-Provavelmente o conselho de ética não aprovaria, mas vamos trabalhar com dados referentes aos passageiro do Titanic.
+Provavelmente o conselho de Ã©tica nÃ£o aprovaria, mas vamos trabalhar com dados referentes aos passageiro do Titanic.
 
-Os dados estão dosponíveis no link
+Os dados estÃ£o dosponÃ­veis no link
 https://github.com/Ecosantos/Desenho-amostral-UERJ/blob/master/Dados/Titanic.txt
 
 * Para esse conjunto de dados temos 5 colunas:
-    + Classe dos passageiros: 1ª, 2ª e 3ª Classe;
-    + Sobrevivente: Passageiro conseguiu sobreviver? Sim=1 Não=0
+    + Classe dos passageiros: 1Âª, 2Âª e 3Âª Classe;
+    + Sobrevivente: Passageiro conseguiu sobreviver? Sim=1 NÃ£o=0
     + Sexo do passageiro: Homem(H)/Mulher(M)
     + Idade do passageiro (em anos)
     + Nome dos passageiros
 
 
-Porém para a essa aula vamos utilizar apenas a idade dos passageiros
+PorÃ©m para a essa aula vamos utilizar apenas a idade dos passageiros
 
-Existem inúmeras formas de abrir uma planila no R e vamos trabalhar algumas dessas formas nas próximas aulas. Como agora esse não é o foco da aula, vamos buscar o arquivo direto da internet com o comando
+Existem inÃºmeras formas de abrir uma planila no R e vamos trabalhar algumas dessas formas nas prÃ³ximas aulas. Como agora esse nÃ£o Ã© o foco da aula, vamos buscar o arquivo direto da internet com o comando
 
 
 ```{r, include=FALSE}
