@@ -153,9 +153,7 @@ https://github.com/Ecosantos/Desenho-amostral-UERJ/blob/master/Dados/Titanic.txt
 
 Porém para a essa aula vamos utilizar apenas a idade dos passageiros
 
-Existem inúmeras formas de abrir uma planila no R e vamos trabalhar algumas dessas formas nas próximas aulas. Como agora esse não é o foco da aula, vamos buscar o arquivo direto da internet com o comando
-
-
+Existem inúmeras formas de abrir uma planila no R e vamos trabalhar algumas dessas formas nas próximas aulas. Como agora esse não é o foco da aula, vamos buscar o arquivo direto da internet copiando e colando o comando:
 ```{r, include=FALSE}
 require(RCurl);Titanic1<-read.table(text=getURL(
 "https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/Titanic.txt"),header=T)
