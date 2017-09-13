@@ -103,11 +103,10 @@ Curiosamente  o R não possui no seu pacote básico funções para avaliar essas
 
 #### Erro padrão
 
-Bom, sabemos [^1] que a formula para calcular o Erro padrão (![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$)) é dividir a variância ![equation](https://latex.codecogs.com/gif.latex?\sigma) pela raiz quadrada do tamanho amostral **n** ![equation](https://latex.codecogs.com/gif.latex?\frac{\sigma}{\sqrt{n}}), logo, se juntarmos toda essas informações teremos:
+Bom, sabemos que a formula para calcular o Erro padrão (![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$)) é dividir a variância ![equation](https://latex.codecogs.com/gif.latex?\sigma) pela raiz quadrada do tamanho amostral **n** ![equation](https://latex.codecogs.com/gif.latex?\rfrac{\sigma}{\sqrt{n}}), logo, se juntarmos toda essas informações teremos:
 
 ![equation](https://latex.codecogs.com/gif.latex?$$SE_{\bar{x}}&space;=&space;\frac{\sigma}{\sqrt{n}}$$)
 
-[^1]: Mentira precisei copiar da internet pq não iria lembrar nunca de cabeça XD
 
 
 Nesse caso vamos utilizar o seguinte comando:
