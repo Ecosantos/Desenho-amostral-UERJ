@@ -1,0 +1,198 @@
+---
+title: "Descrevendo os dados - Parte 1 - Estatistica descritiva"
+author: "Gabriel Santos"
+date: "12 de setembro de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Estatística descritiva
+
+### Introdução
+
+#### Vamos começar por uma definição mais formal:
+##### O que a Wikipedia tem a nos dizer sobre a Estatistica descritiva?
+A estatística descritiva é um ramo da estatística que aplica várias técnicas para descrever e sumarizar um conjunto de dados. Diferencia-se da estatística inferencial, ou estatística indutiva, pelo objectivo: organizar, sumarizar dados ao invés de usar os dados em aprendizado sobre a população. Esse princípio faz da estatística descritiva independente.
+
+Algumas medidas que são normalmente usadas para descrever um conjunto de dados são medidas de tendência central e medidas de variabilidade ou dispersão. Medidas de tendência central incluem média,mediana e moda. Medidas de variabilidade incluem desvio padrão,variância, o valor máximo e mínimo, obliquidade e curtose.
+
+#### OK, agora com outras palavras:
+As vezes pode até parecer complicado, mas não precisa se preocupar, toda essa parte descritiva você pratica diariamente dividindo uma conta de bar, a conta da pizza com os amigos. Muitas vezes você faz isso intuitivamente, dividindo ao falar que uma espécie é maior que a outra, comparando a altura das pessoas em paises diferentes. A gente até vai dar uma complicada nisso, mas se você focar em comparar dois grupos distintos, como por exemplo, duas espécies, dois grupos de pacientes ou pessoas de outros paises vc vai conseguir visualizar tudo que vamos tentar fazer aqui.
+
+
+
+### Vamos colocar a mão na massa (de dados)
+
+####  Exemplo
+
+Primeiro vamos criar um exemplo hipótético.
+
+Nesse exemplo, vamos criar um objeto ``x`` que vai conter 20 números aleatórios
+
+```{r}
+x<-c(1,25,32,41,57,62,71,1)
+# Lembrando que:
+#  "x" é o objeto que vai armazenar todos esses números
+#  "c" é a função para agrupar várias informações
+```
+```{r, echo=FALSE}
+x
+```
+
+A estatistica descritiva não tem nenhum segredo e vai ser bem parecida com o Excel nesse ponto. Basicamente você só precisa dizer o que você quer fazer e inserir qual o conjunto de dados alvo da ação.
+
+
+
+#### Media
+```{r}
+mean(x)
+```
+
+
+
+#### Mediana
+```{r}
+median(x)
+```
+
+####	Valor Maximo
+```{r}
+max(x)
+```
+
+#### Minimo
+```{r}
+min(x)
+```
+
+#### Variância
+```{r}
+var(x)
+```
+
+#### Desvio padrão.
+
+
+```{r}
+sd(x)
+```
+
+
+Por definição estatística, o Desvio padrão é a raiz quadrada da variância. 
+
+
+Horas, se sabendo que a variância pode ser calculada pela função ``var()`` e que o a raiz quadrada pode ser calculada pela função ``sqrt()`` (abreviação para "square root", ou raiz quadrada em inglês) então basta apenas criarmos uma função dentro da outra para chega. Vamos testar!
+
+```{r}
+sqrt(var(x))
+```
+Agrupar uma ou mais funções dentro de um único comando é algo bem comum, mas quando estamos começando pode se tornar um pouco confuso mesmo, dessa forma, uma sugestão seria fazer o mesmo comando passo a passo.
+
+
+Ou seja, primeiro avaliamos a variância e armazenamos o resultado dentro de um obeto e em seguida executamos a função da raiz quadrada no objeto que criamos.
+
+```{r}
+variancia<-var(x)
+# Armazenamos o valor da função "var" dentro do objeto chamado "variancia"
+
+sqrt(variancia)
+```
+
+Compare agora as 3 diferentes formas que utilizamos para calcular o desvio padrão
+```{r}
+sd(x)
+sqrt(var(x))
+sqrt(variancia)
+```
+
+
+#### Moda e erro padrão
+Curiosamente  o R não possui no seu pacote básico funções para avaliar essas medidas, mas podemos fazer tudo isso facilmente. Vamos começar pelo erro padrão.
+
+#### Erro padrão
+
+Bom, sabemos [^1] que a formula para calcular o Erro padrão ($SE_{\bar{x}}$) é a variância ($\sigma$) dividida pela raiz quadrada do tamanho amostral **n** $\frac{\sigma}{\sqrt{n}}$, logo, juntando todos esses fatores temos:
+
+
+$$SE_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
+
+[^1]: Mentira precisei copiar da internet pq não iria lembrar nunca de cabeça XD
+
+
+Nesse caso vamos utilizar o seguinte comando:
+
+```{r}
+sd(x)/sqrt(length(x))
+```
+#### MODA
+Diferente das demais funções, a Moda não está disponível na função básica do R e apesar de podermos criá-la, será mais prática utilizarmos um uma extensão (*pacote*) do R de alguém que já criou isso. Vamos utilizar o pacote "modeest" e para instalá-lo vamos utilizar a função ``install.packages()``. Mais uma vez é só copiar e colar a função no seu R.  
+```{r}
+# install.packages("modeest") (retirar o "#")
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(modeest)
+mfv(x)
+```
+
+
+
+#### Resumindo tudo
+Algumas vezes precisamos de um conjunto de medidas descritivas de uma mesma variável, nesse caso a função ``summary()`` resolve o nosso problema. 
+
+Essa função é bem genérica e pode tanto nos dar as medidas descritivas de uma variável de nosso interesse, quanto os resultados de uma análise complexa. Ainda vamos utilizar muito essa função, então você vai acabar decorando ela. 
+
+A função ``sumarry()`` retorna automaticamente os valores mínimo, máximo, média e mediana, além dos valores de 2º e 3º Quartil, que são os valores utilizados para fazer gráficos do tipo boxplot. Em breve vamos entrar nesse assunto novamente.
+
+```{r}
+summary(x)
+```
+
+### Exemplo 2
+
+Provavelmente o conselho de ética não aprovaria, mas vamos trabalhar com dados referentes aos passageiro do Titanic.
+
+Os dados estão dosponíveis no link
+https://github.com/Ecosantos/Desenho-amostral-UERJ/blob/master/Dados/Titanic.txt
+
+* Para esse conjunto de dados temos 5 colunas:
+    + Classe dos passageiros: 1ª, 2ª e 3ª Classe;
+    + Sobrevivente: Passageiro conseguiu sobreviver? Sim=1 Não=0
+    + Sexo do passageiro: Homem(H)/Mulher(M)
+    + Idade do passageiro (em anos)
+    + Nome dos passageiros
+
+
+Porém para a essa aula vamos utilizar apenas a idade dos passageiros
+
+Existem inúmeras formas de abrir uma planila no R e vamos trabalhar algumas dessas formas nas próximas aulas. Como agora esse não é o foco da aula, vamos buscar o arquivo direto da internet com o comando
+
+
+```{r, include=FALSE}
+require(RCurl)
+Titanic1<-read.table(text=getURL(
+"https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/Titanic.txt"),header=T)
+
+Titanic<-Titanic1$Idade
+
+```
+
+
+```{r}
+mean(Titanic)
+median(Titanic)
+max(Titanic)
+min(Titanic)
+summary(Titanic)
+```
+
+Experimente visualizar os dados completto
+```{r}
+Titanic1
+```
+
+
+
