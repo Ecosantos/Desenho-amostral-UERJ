@@ -103,18 +103,9 @@ Curiosamente  o R não possui no seu pacote básico funções para avaliar essas
 
 #### Erro padrão
 
-Bom, sabemos [^1] que a formula para calcular o Erro padrão ![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$) é a variância ![equation](https://latex.codecogs.com/gif.latex?($\sigma$) dividida pela raiz quadrada do tamanho amostral **n** ![equation](https://latex.codecogs.com/gif.latex?\frac{\sigma}{\sqrt{n}}), logo, juntando todos esses fatores temos:
-
+Bom, sabemos [^1] que a formula para calcular o Erro padrão (![equation](https://latex.codecogs.com/gif.latex?$SE_{\bar{x}}$)) é dividir a variância ![equation](https://latex.codecogs.com/gif.latex?\sigma) pela raiz quadrada do tamanho amostral **n** ![equation](https://latex.codecogs.com/gif.latex?\frac{\sigma}{\sqrt{n}}), logo, se juntarmos toda essas informações teremos:
 
 ![equation](https://latex.codecogs.com/gif.latex?$$SE_{\bar{x}}&space;=&space;\frac{\sigma}{\sqrt{n}}$$)
-
-![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
-
-![equation](https://latex.codecogs.com/gif.latex?$\text{S}_1(N)&space;=&space;\sum_{p=1}^N&space;\text{E}(p)$)
-
-
-![]("http://mathurl.com/render.cgi?SE_%7B%5Cbar%7Bx%7D%7D%20%3D%20%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D%5Cnocache")
-$$SE_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
 
 [^1]: Mentira precisei copiar da internet pq não iria lembrar nunca de cabeça XD
 
