@@ -115,7 +115,7 @@ sd(x)/sqrt(length(x))
 #### MODA
 Diferente das demais funções, a Moda não está disponível na função básica do R e apesar de podermos criá-la, será mais prática utilizarmos um uma extensão (*pacote*) do R de alguém que já criou isso. Vamos utilizar o pacote "modeest" e para instalá-lo vamos utilizar a função ``install.packages()``. Mais uma vez é só copiar e colar a função no seu R.  
 ```{r}
-# install.packages("modeest") (retirar o "#")
+install.packages("modeest")
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -157,8 +157,7 @@ Existem inúmeras formas de abrir uma planila no R e vamos trabalhar algumas des
 
 
 ```{r, include=FALSE}
-require(RCurl)
-Titanic1<-read.table(text=getURL(
+require(RCurl);Titanic1<-read.table(text=getURL(
 "https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/Titanic.txt"),header=T)
 
 Titanic<-Titanic1$Idade
