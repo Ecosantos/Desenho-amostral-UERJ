@@ -115,11 +115,11 @@ sd(x)/sqrt(length(x))
 #### MODA
 Diferente das demais funções, a Moda não está disponível na função básica do R e apesar de podermos criá-la, será mais prática utilizarmos um uma extensão (*pacote*) do R de alguém que já criou isso. Vamos utilizar o pacote "modeest" e para instalá-lo vamos utilizar a função ``install.packages()``. Mais uma vez é só copiar e colar a função no seu R. 
 
-   * Vai aparecer uma caixa com uma lista de paises (*Cran mirror*). Esses são os lugares onde você pode baixar o pacote do seu interesse. Pode escolher o Brasil, ou qualquer outro país. A escolha pode ser baseada no país que você tem mais vontade de viajar.
 
 ```{r}
 install.packages("modeest")
 ```
+   * Vai aparecer uma caixa com uma lista de paises (*Cran mirror*). Esses são os lugares onde você pode baixar o pacote do seu interesse. Pode escolher o Brasil, ou qualquer outro país. A escolha pode ser baseada no país que você tem mais vontade de viajar.
 
 ```{r, message=FALSE, warning=FALSE}
 library(modeest)
