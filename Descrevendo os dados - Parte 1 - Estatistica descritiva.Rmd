@@ -9,7 +9,7 @@ A estatística descritiva é um ramo da estatística que aplica várias técnica
 Algumas medidas que são normalmente usadas para descrever um conjunto de dados são medidas de tendência central e medidas de variabilidade ou dispersão. Medidas de tendência central incluem média,mediana e moda. Medidas de variabilidade incluem desvio padrão,variância, o valor máximo e mínimo, obliquidade e curtose.
 
 #### OK, agora com outras palavras:
-As vezes pode até parecer complicado, mas não precisa se preocupar, toda essa parte descritiva você pratica diariamente dividindo uma conta de bar, a conta da pizza com os amigos. Muitas vezes você faz isso intuitivamente, dividindo ao falar que uma espécie é maior que a outra, comparando a altura das pessoas em paises diferentes. A gente até vai dar uma complicada nisso, mas se você focar em comparar dois grupos distintos, como por exemplo, duas espécies, dois grupos de pacientes ou pessoas de outros paises vc vai conseguir visualizar tudo que vamos tentar fazer aqui.
+As vezes pode até parecer complicado, mas não precisa se preocupar, toda essa parte descritiva você pratica diariamente dividindo uma conta de bar, a conta da pizza com os amigos. Muitas vezes você faz isso intuitivamente, ao falar que uma espécie é maior que a outra, comparando a altura das pessoas em paises diferentes. A gente até vai dar uma complicada nisso, mas se você focar em comparar dois grupos distintos, como por exemplo, duas espécies, dois grupos de pacientes ou pessoas de outros paises vc vai conseguir visualizar tudo que vamos tentar fazer aqui.
 
 
 
@@ -22,7 +22,7 @@ Primeiro vamos criar um exemplo hipótético.
 Nesse exemplo, vamos criar um objeto ``x`` que vai conter 20 números aleatórios
 
 ```{r}
-x<-c(1,25,32,41,57,62,71,1)
+x<-c(1,25,32,41,57,62,71,1,10,35,42,11,37,82,91,1)
 # Lembrando que:
 #  "x" é o objeto que vai armazenar todos esses números
 #  "c" é a função para agrupar várias informações
