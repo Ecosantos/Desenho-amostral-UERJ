@@ -1,3 +1,9 @@
+---
+title: "Descrevendo os dados - Parte 1 - Estatistica descritiva"
+author: "Gabriel Santos"
+date: "12 de setembro de 2017"
+---
+
 ## Estatística descritiva
 
 ### Introdução
@@ -116,14 +122,21 @@ sd(x)/sqrt(length(x))
 Diferente das demais funções, a Moda não está disponível na função básica do R e apesar de podermos criá-la, será mais prática utilizarmos um uma extensão (*pacote*) do R de alguém que já criou isso. Vamos utilizar o pacote "modeest" e para instalá-lo vamos utilizar a função ``install.packages()``. Mais uma vez é só copiar e colar a função no seu R. 
 
 
-```{r}
+```{r, eval=FALSE, message=FALSE, include=TRUE}
 install.packages("modeest")
 ```
+
    * Vai aparecer uma caixa com uma lista de paises (*Cran mirror*). Esses são os lugares onde você pode baixar o pacote do seu interesse. Pode escolher o Brasil, ou qualquer outro país. A escolha pode ser baseada no país que você tem mais vontade de viajar.
 
 ```{r, message=FALSE, warning=FALSE}
 library(modeest)
+```
+
+Existem diversas funções no pacote `modeest`, mas a única função que vai nos interessar no momento é a função `mfv()` (que não significa nada mais do que *Most frequently value*, viu que simples?). Vamos usá-la.
+
+```{r}
 mfv(x)
+#lembrando que x é o conjunto de valores que criamos
 ```
 
 
@@ -140,6 +153,111 @@ summary(x)
 ```
 
 ### Exemplo 2
+
+Vamos trabalhar um outro conjunto de dados agora.
+
+Imaginemos que estamos trabalhando com duas classes do curso de ciências biológicas. Um curso diurno e ou curso noturno.
+Os dados dos nossos alunos está no arquivo "Alunos Idades.txt", o arquivo está disponível no link:
+
+  - "https://github.com/Ecosantos/Desenho-amostral-UERJ/blob/master/Dados/Alunos%20idade.txt"
+
+Temos 10 alunos em cada turma com as seguintes idades:
+
+
+```{r, eval=FALSE, include=TRUE}
+Idades<-read.table(file.choose(),header=T)
+#Irá abrir uma janela para você escolher o arquivo do seu interesse.
+#Escolha o arquivo "Alunos idade.txt"
+```
+
+Abra o objeto o objeto que contém o conjunto de dados que acabamos de importar
+
+```{r}
+Idades
+```
+Perceba que temos um conjunto de dados bem simples, com duas colunas *Diurno* e *Noturno* e uma série de idade dos alunos em cada turma.
+
+Antes que possamos começar a trabalhar com os dados, é necessário informarmos ao R que todos os valores na coluna *Diurno* referem-se a idade dos alunos nessa turma e o mesmo para a coluna de idades da turma *Noturno*. O comando para isso é `attach()`
+```{r, message=FALSE, warning=FALSE}
+attach(Idades)
+```
+
+Agora vamos observar as mesmas métricas que já haviamos aprendido
+```{r}
+mean(Idades$Diurno)
+mean(Idades$Noturno)
+
+median(Idades$Diurno)
+median(Idades$Noturno)
+
+max(Idades$Diurno)
+max(Idades$Noturno)
+
+min(Idades$Diurno)
+min(Idades$Noturno)
+
+var(Idades$Diurno)
+var(Idades$Noturno)
+
+sd(Idades$Diurno)
+sd(Idades$Noturno)
+
+```
+
+Agora vamos elaborar os gráficos para poder visualizar melhor o padrão dos dados.Para isso, vamos salvar as médias e medianas em objetos distintos para utilizarmos como marcação.
+
+
+```{r}
+#DIURNO
+
+#Média 
+MediaDiurna<-mean(Idades$Diurno)
+#Mediana 
+MedianaDiurna<-median(Idades$Diurno)
+
+#NOTURNO
+#Média 
+MediaNoturna<-mean(Idades$Noturno)
+#Mediana 
+MedianaNoturna<-median(Idades$Noturno)
+```
+
+
+```{r}
+hist(Idades$Diurno,col="yellow")
+#Agora adicionamos as marcações da média e da mediana
+abline(v=MediaDiurna, col="red")
+abline(v=MedianaDiurna, col="orange")
+```
+
+```{r}
+hist(Idades$Noturno,col="green")
+#Agora adicionamos as marcações da média e da mediana
+abline(v=MediaNoturna, col="blue")
+abline(v=MedianaNoturna, col="pink")
+```
+
+Podemos juntar os gráficos para ficar mais fácil visualizar as informações.
+Para isso iremos utilizar o comando `par(mfrow=c(número de gráficos na vertical, número de gráficos na horizontal))`
+```{r}
+par(mfrow=c(1,2))
+hist(Idades$Diurno,col="yellow")
+abline(v=MediaDiurna, col="red")
+abline(v=MedianaDiurna, col="orange")
+hist(Idades$Noturno,col="green")
+abline(v=MediaNoturna, col="blue")
+abline(v=MedianaNoturna, col="pink")
+```
+
+Outra forma de apresentarmos os dados é utilizando o boxplot
+```{r}
+boxplot(Idades,col="grey70")
+```
+
+
+
+
+### Exemplo 3
 
 Provavelmente o conselho de ética não aprovaria, mas vamos trabalhar com dados referentes aos passageiro do Titanic.
 
@@ -178,6 +296,10 @@ Experimente visualizar os dados completto
 ```{r}
 Titanic1
 ```
+
+
+
+
 
 
 
