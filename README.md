@@ -1,6 +1,5 @@
-# Desenho amostral UERJ 2017/2 
 ### Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
-Dados, scripts e outros documentos importantes para a disciplina de desenho amostral ministrada para a graduação em ciências biológicas da UERJ serão disponibilizados aqui!
+Dados, scripts e outros documentos importantes para a disciplina de desenho amostral, ministrada para a graduação em ciências biológicas da UERJ, serão disponibilizados aqui!
 
 
 A disciplina é ministrada por mim e pela professora responsável Dra. Helena Bergallo.
@@ -11,14 +10,14 @@ O site segue a seguinte organização:
 
 Pasta | Arquivo
 ------ | -------
-Scripts | scripts brutos para serem rodados em sala de aula
-Aulas | Scripts trabalhados e detalhados para estudo individual
-Dados | Dados utilizados durante as aulas
-Artigos | Leituras sugeridas 
+[Scripts](https://github.com/Ecosantos/Desenho-amostral-UERJ/tree/master/Scripts) | scripts brutos para serem rodados em sala de aula
+[Aulas](https://github.com/Ecosantos/Desenho-amostral-UERJ/tree/master/Aulas) | Scripts trabalhados e detalhados para estudo individual
+[Dados](https://github.com/Ecosantos/Desenho-amostral-UERJ/tree/master/Dados) | Dados utilizados durante as aulas
+[Artigos](https://github.com/Ecosantos/Desenho-amostral-UERJ/tree/master/Artigos) | Leituras sugeridas 
 Outros | Mix de conteúdos aleatórios pertinentes!
 
 
-## Instalando o R
+# Instalando o R
 
 
 Durante a disciplina iremos utilizar o software R que pode ser baixado gratuitamente no link:
@@ -46,3 +45,8 @@ Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser in
 Alguns pacotes disponíveis para você procurar métodos, técnicas e exemplos: https://cran.r-project.org/web/packages/available_packages_by_date.html
 
 
+
+
+## ______________________________________________________________________
+
+![#UERJRESISTE](https://cdn-az.allevents.in/banners/0372e1f34e80208d8f9fc2b6b1bbe653)
