@@ -39,7 +39,7 @@ Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser in
 
 
 
-## Outros detalhes sobre o R  :metal
+## Outros detalhes sobre o R  :metal:
 
 #### Em construção 
 
