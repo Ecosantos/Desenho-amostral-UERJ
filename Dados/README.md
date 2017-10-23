@@ -12,4 +12,4 @@ Introdução ao R | <a href="https://raw.githubusercontent.com/Ecosantos/Desenho
 
 ## Como baixar os arquivos?
 
-![Salvando_arquivo_Github](C:/GITHUB/Salvando_ arquivo_Github.bmp)
+![Salvando_arquivo_Github]("C:\GITHUB\Salvando_ arquivo_Github.bmp")
