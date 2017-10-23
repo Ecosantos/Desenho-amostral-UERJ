@@ -4,8 +4,12 @@ Introdução ao R | <a href="https://raw.githubusercontent.com/Ecosantos/Desenho
    Estatistica descritiva | <a href="https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/Descrevendo%20os%20dados%20-%20Parte%201%20-%20Estatistica%20descritiva.R">Script</a> | <a href="https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/Alunos%20idade.txt">Dados</a>
   
 
+<a href="path/to/file" download>Click here to download</a>
+
+<a href="https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/Descrevendo%20os%20dados%20-%20Parte%201%20-%20Estatistica%20descritiva.R" download target="_blank"> Click here to download</a>
+
 
 
 ## Como baixar os arquivos?
 
-![Salvando arquivo](C:/GITHUB/Salvando arquivo Github.bmp)
+![Salvando_arquivo_Github](C:/GITHUB/Salvando_ arquivo_Github.bmp)
