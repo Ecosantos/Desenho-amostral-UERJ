@@ -48,7 +48,7 @@ Alguns pacotes disponíveis para você procurar métodos, técnicas e exemplos:
 https://cran.r-project.org/web/packages/available_packages_by_date.html
 
 
-
+** Em breve todo o conteúdo migrado para o link: https://ecosantos.github.io/Desenho-amostral-UERJ/
 
 ## ______________________________________________________________________
 
