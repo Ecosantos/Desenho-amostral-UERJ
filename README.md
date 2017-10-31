@@ -21,17 +21,16 @@ Outros | Mix de conteúdos aleatórios pertinentes!
 # Instalando o R
 
 
-Durante a disciplina iremos utilizar o software R que pode ser baixado gratuitamente no link:
-https://cran.r-project.org/
+Durante a disciplina iremos utilizar o software R que pode ser baixado gratuitamente [aqui](https://cran.r-project.org/)
 
 
 
-ou diretamente pelo link (se o seu computador for  Windows): https://cran.r-project.org/bin/windows/base/R-3.4.1-win.exe
+ou diretamente por [aqui](https://cran.r-project.org/bin/windows/base/R-3.4.1-win.exe) (se o seu computador for  Windows): 
 
 
 
 
-Além disso iremos utilizar a interfase gráfica do Rstudio, que é mais agradável para quem está trabalhando com o R pela primeira vez. Pra isso é só instalar a versão gratuita: https://www.rstudio.com/products/rstudio/download/
+Além disso iremos utilizar a interfase gráfica do Rstudio, que é mais agradável para quem está trabalhando com o R pela primeira vez. Pra isso é só instalar a versão gratuita [aqui](https://www.rstudio.com/products/rstudio/download/)
 
 
 Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser instalado logo depois do R propriamente dito.
@@ -43,12 +42,10 @@ Lembrando que o Rstudio é apenas uma "mascara" para o R, então ele deve ser in
 
 #### Em construção 
 
-Alguns pacotes disponíveis para você procurar métodos, técnicas e exemplos:
-
-https://cran.r-project.org/web/packages/available_packages_by_date.html
+Alguns pacotes disponíveis para você procurar métodos, técnicas e exemplos [Divirta-se!](https://cran.r-project.org/web/packages/available_packages_by_date.html)
 
 
-** Em breve todo o conteúdo migrado para o link: https://ecosantos.github.io/Desenho-amostral-UERJ/
+** Em breve todo o conteúdo migrado para um site mais bonitinho que você pode acessar [aqui](https://ecosantos.github.io/Desenho-amostral-UERJ/)
 
 ## ______________________________________________________________________
 
