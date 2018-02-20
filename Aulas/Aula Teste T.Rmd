@@ -5,11 +5,7 @@ date: "15 de outubro de 2017"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-#			AULA PRÁTIcA 2 - Distribuições e valores críticos
+#			AULA PRÁTICA 2 - Distribuições e valores críticos
 
 AINDA UTILIZANDOS OS DADOS REFERENTE ÀS ALTURAS AMOSTRADAS
 ```{r, include=FALSE}
