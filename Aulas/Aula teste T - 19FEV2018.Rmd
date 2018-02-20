@@ -1,0 +1,155 @@
+---
+title: "Teste T"
+author: "Gabriel Santos"
+date: "15 de outubro de 2017"
+output:
+  word_document: default
+  html_document: default
+---
+
+###			AULA PRÁTICA 2 - Permutações
+
+Ainda utilizando os dados referente às [alturas](https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt) de homens e mulheres medidos em sala de aula.
+
+```{r, include=FALSE}
+library(bitops)
+library(RCurl)
+tamanho<-read.table(text=getURL("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt"),header=T)
+attach(tamanho)
+```
+
+
+```{r, eval=FALSE}
+tamanho<-read.table(file.choose(),header=T)
+attach(tamanho)
+```
+
+
+```{r}
+tamanho<-as.data.frame(tamanho)
+attach(tamanho)
+```
+
+
+1º Passo: Calcular as médias das nossas amostras de homens e mulheres
+```{r}
+medSex<-tapply(tamanho$alturas,tamanho$sexo,mean)
+medSex
+```
+
+2º Passo: Subtrair as médias de homens pela média das mulheres
+```{r}
+difOBS<-medSex["H"]-medSex["M"]
+difOBS
+```
+
+3 Passo: Agora vamos aleatorizar as alturas usando a função `sample`. 
+
+   - Perceba que ao aleatorizarmos as alturas, a identidade "homem/mulher" também foi aleatorizada como consequência, então não tem motivo de nos preocuparmos em aleatorizar os dois!
+```{r}
+#perceba que não criamos nenhum objeto para armazenar essa aleatorização, então teremos que repetir o passo da próxima vez.
+sample(tamanho$alturas)
+```
+
+
+ - Agora vamos fazer uma nova aleatorização e calcular a média diretamente dessa nova aleatorização para cada um dos sexos
+```{r}
+mediasaleat<-tapply(sample(tamanho$alturas),tamanho$sexo,mean)
+
+mediasaleat
+```
+
+Agora verificamos a difereça
+```{r}
+mediasaleat["H"]-mediasaleat["M"]
+```
+
+
+```{r}
+#Aqui estamos calulando a diferença entre as médias de homens e mulheres com base nos valores observados
+diff(medSex)
+
+#Aqui estamos calulando a diferença entre as médias de homens e mulheres baseada na aleatorização que fizemos
+diff(mediasaleat)
+```
+
+
+#### Modificando a função diff (inversão de sinal)	
+
+
+Iremos trabalhar agora com a função diff modifcada que está disponível no link:
+https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R
+
+Essa função faz basicamente a mesma coisa, porém como sabemos que homens são geralmente maiores que mulheres, convertemos essa função apenas para avaliar o quanto homens são maiores do que mulheres, talvez deixe mais intuitivo.  Também é uma oportunidade para aqueles que tiverem mais interessados procurar saber como editar uma função.
+
+```{r}
+source("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R")
+```
+
+Caso queira conferir a diferença entre cada uma das funções, você pode abri-las e compará-las pessoalmente apenas chamando a função `diff.default` e `dif`
+
+Agora vamos comparar a diferença entre elas
+
+```{r}
+#Função "Diff" modificada
+dif(mediasaleat)
+
+#Função "Dif" original
+diff(mediasaleat)
+```
+
+Notou a diferença? OK então vamos prosseguir.
+
+
+```{r}
+dif(tapply(sample(tamanho$alturas), tamanho$sexo,mean))
+
+```
+
+```{r}
+difPERMU<- replicate(100, dif(tapply(sample(tamanho$alturas),
+tamanho$sexo,mean)))
+```
+
+```{r, echo=F}
+difPERMU
+```
+
+```{r}
+length(which(difPERMU>=difOBS))
+```
+
+```{r}
+sort(difPERMU)
+```
+
+```{r}
+length(which(abs(difPERMU)>abs(difOBS)))
+```
+
+
+####			PARTE 2
+
+
+##### comparando os gráficos gerados nas ultimas aulas com a diferenças existentes
+
+- distribuição de diferenças geradas por aleatorização 
+
+```{r}
+hist(difPERMU,col="green",xlim=c(-15,20)) 
+abline(v=mean(difPERMU),col="blue",lty=2,lwd=2)
+abline(v=difOBS,col="red",lty=2,lwd=2)
+```
+
+
+
+##### distribuição das diferenças comparadas entre pares aleatórios (porém sempre entre homens e mulheres)
+
+```{r}
+hist(difPERMU,col="green",xlim=c(-15,20)) 
+abline(v=mean(difPERMU),col="blue",lty=2,lwd=2)
+```
+
+```{r, eval=FALSE}
+abline(v=difOBS,col="red",lty=2,lwd=2)
+```
