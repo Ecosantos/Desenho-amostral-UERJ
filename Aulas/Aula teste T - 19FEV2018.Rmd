@@ -7,9 +7,9 @@ output:
   html_document: default
 ---
 
-###			AULA PR¡TICA 2 - PermutaÁıes
+##			AULA PR√ÅTICA 2 - Permuta√ß√µes
 
-Ainda utilizando os dados referente ‡s [alturas](https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt) de homens e mulheres medidos em sala de aula.
+Ainda utilizando os dados referente √†s [alturas](https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt) de homens e mulheres medidos em sala de aula.
 
 ```{r, include=FALSE}
 library(bitops)
@@ -31,74 +31,74 @@ attach(tamanho)
 ```
 
 
-1∫ Passo: Calcular as mÈdias das nossas amostras de homens e mulheres
+1¬∫ Passo: Calcular as m√©dias das nossas amostras de homens e mulheres
 ```{r}
 medSex<-tapply(tamanho$alturas,tamanho$sexo,mean)
 medSex
 ```
 
-2∫ Passo: Subtrair as mÈdias de homens pela mÈdia das mulheres
+2¬∫ Passo: Subtrair as m√©dias de homens pela m√©dia das mulheres
 ```{r}
 difOBS<-medSex["H"]-medSex["M"]
 difOBS
 ```
 
-3 Passo: Agora vamos aleatorizar as alturas usando a funÁ„o `sample`. 
+3 Passo: Agora vamos aleatorizar as alturas usando a fun√ß√£o `sample`. 
 
-   - Perceba que ao aleatorizarmos as alturas, a identidade "homem/mulher" tambÈm foi aleatorizada como consequÍncia, ent„o n„o tem motivo de nos preocuparmos em aleatorizar os dois!
+   - Perceba que ao aleatorizarmos as alturas, a identidade "homem/mulher" tamb√©m foi aleatorizada como consequ√™ncia, ent√£o n√£o tem motivo de nos preocuparmos em aleatorizar os dois!
 ```{r}
-#perceba que n„o criamos nenhum objeto para armazenar essa aleatorizaÁ„o, ent„o teremos que repetir o passo da prÛxima vez.
+#perceba que n√£o criamos nenhum objeto para armazenar essa aleatoriza√ß√£o, ent√£o teremos que repetir o passo da pr√≥xima vez.
 sample(tamanho$alturas)
 ```
 
 
- - Agora vamos fazer uma nova aleatorizaÁ„o e calcular a mÈdia diretamente dessa nova aleatorizaÁ„o para cada um dos sexos
+ - Agora vamos fazer uma nova aleatoriza√ß√£o e calcular a m√©dia diretamente dessa nova aleatoriza√ß√£o para cada um dos sexos
 ```{r}
 mediasaleat<-tapply(sample(tamanho$alturas),tamanho$sexo,mean)
 
 mediasaleat
 ```
 
-Agora verificamos a difereÁa
+Agora verificamos a difere√ßa
 ```{r}
 mediasaleat["H"]-mediasaleat["M"]
 ```
 
 
 ```{r}
-#Aqui estamos calulando a diferenÁa entre as mÈdias de homens e mulheres com base nos valores observados
+#Aqui estamos calulando a diferen√ßa entre as m√©dias de homens e mulheres com base nos valores observados
 diff(medSex)
 
-#Aqui estamos calulando a diferenÁa entre as mÈdias de homens e mulheres baseada na aleatorizaÁ„o que fizemos
+#Aqui estamos calulando a diferen√ßa entre as m√©dias de homens e mulheres baseada na aleatoriza√ß√£o que fizemos
 diff(mediasaleat)
 ```
 
 
-#### Modificando a funÁ„o diff (invers„o de sinal)	
+#### Modificando a fun√ß√£o diff (invers√£o de sinal)	
 
 
-Iremos trabalhar agora com a funÁ„o diff modifcada que est· disponÌvel no link:
+Iremos trabalhar agora com a fun√ß√£o diff modifcada que est√° dispon√≠vel no link:
 https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R
 
-Essa funÁ„o faz basicamente a mesma coisa, porÈm como sabemos que homens s„o geralmente maiores que mulheres, convertemos essa funÁ„o apenas para avaliar o quanto homens s„o maiores do que mulheres, talvez deixe mais intuitivo.  TambÈm È uma oportunidade para aqueles que tiverem mais interessados procurar saber como editar uma funÁ„o.
+Essa fun√ß√£o faz basicamente a mesma coisa, por√©m como sabemos que homens s√£o geralmente maiores que mulheres, convertemos essa fun√ß√£o apenas para avaliar o quanto homens s√£o maiores do que mulheres, talvez deixe mais intuitivo.  Tamb√©m √© uma oportunidade para aqueles que tiverem mais interessados procurar saber como editar uma fun√ß√£o.
 
 ```{r}
 source("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R")
 ```
 
-Caso queira conferir a diferenÁa entre cada uma das funÁıes, vocÍ pode abri-las e compar·-las pessoalmente apenas chamando a funÁ„o `diff.default` e `dif`
+Caso queira conferir a diferen√ßa entre cada uma das fun√ß√µes, voc√™ pode abri-las e compar√°-las pessoalmente apenas chamando a fun√ß√£o `diff.default` e `dif`
 
-Agora vamos comparar a diferenÁa entre elas
+Agora vamos comparar a diferen√ßa entre elas
 
 ```{r}
-#FunÁ„o "Diff" modificada
+#Fun√ß√£o "Diff" modificada
 dif(mediasaleat)
 
-#FunÁ„o "Dif" original
+#Fun√ß√£o "Dif" original
 diff(mediasaleat)
 ```
 
-Notou a diferenÁa? OK ent„o vamos prosseguir.
+Notou a diferen√ßa? OK ent√£o vamos prosseguir.
 
 
 ```{r}
@@ -131,9 +131,9 @@ length(which(abs(difPERMU)>abs(difOBS)))
 ####			PARTE 2
 
 
-##### comparando os gr·ficos gerados nas ultimas aulas com a diferenÁas existentes
+##### comparando os gr√°ficos gerados nas ultimas aulas com a diferen√ßas existentes
 
-- distribuiÁ„o de diferenÁas geradas por aleatorizaÁ„o 
+- distribui√ß√£o de diferen√ßas geradas por aleatoriza√ß√£o 
 
 ```{r}
 hist(difPERMU,col="green",xlim=c(-15,20)) 
@@ -143,7 +143,7 @@ abline(v=difOBS,col="red",lty=2,lwd=2)
 
 
 
-##### distribuiÁ„o das diferenÁas comparadas entre pares aleatÛrios (porÈm sempre entre homens e mulheres)
+##### distribui√ß√£o das diferen√ßas comparadas entre pares aleat√≥rios (por√©m sempre entre homens e mulheres)
 
 ```{r}
 hist(difPERMU,col="green",xlim=c(-15,20)) 
