@@ -11,7 +11,7 @@ output:
 
 Ainda utilizando os dados referente às [alturas](https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt) de homens e mulheres medidos em sala de aula.
 
-```{r, echo=FALSE}
+```{r, eval=F}
 library(bitops)
 library(RCurl)
 tamanho<-read.table(text=getURL("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt"),header=T)
