@@ -9,9 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#			AULA 1 - DistribuiÁıes e valores crÌticos
+#			AULA PR√ÅTIcA 2 - Distribui√ß√µes e valores cr√≠ticos
 
-AINDA UTILIZANDOS OS DADOS REFERENTE ¿S ALTURAS AMOSTRADAS
+AINDA UTILIZANDOS OS DADOS REFERENTE √ÄS ALTURAS AMOSTRADAS
 ```{r, include=FALSE}
 library(bitops)
 library(RCurl)
@@ -58,20 +58,20 @@ diff(medSex)
 
 
 
-#### Modificando a funÁ„o diff (invers„o de sinal)	
+#### Modificando a fun√ß√£o diff (invers√£o de sinal)	
 
 
-Iremos trabalhar agora com a funÁ„o diff modifcada que est· disponÌvel no link:
+Iremos trabalhar agora com a fun√ß√£o diff modifcada que est√° dispon√≠vel no link:
 https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R
 
-Na aula iremos trabalhar passo a passo para editarmos a funÁ„o original para que ela se adeque ao nosso interesse
+Na aula iremos trabalhar passo a passo para editarmos a fun√ß√£o original para que ela se adeque ao nosso interesse
 ```{r}
 source("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R")
 ```
 
 
 
-Caso queira conferir a diferenÁa entre cada uma das funÁıes, vocÍ pode abri-las e compar·-las pessoalmente apenas chamando a funÁ„o
+Caso queira conferir a diferen√ßa entre cada uma das fun√ß√µes, voc√™ pode abri-las e compar√°-las pessoalmente apenas chamando a fun√ß√£o
 ```{r, echo=FALSE}
 diff.default
 ```
@@ -81,14 +81,14 @@ dif
 ```
 
 
-Agora vamos comparar a diferenÁa entre elas
+Agora vamos comparar a diferen√ßa entre elas
 
 ```{r}
 dif(mediasaleat)
 diff(mediasaleat)
 ```
 
-Notou a diferenÁa? OK ent„o vamos prosseguir.
+Notou a diferen√ßa? OK ent√£o vamos prosseguir.
 
 
 ```{r}
@@ -122,9 +122,9 @@ length(which(abs(difPERMU)>abs(difOBS)))
 ####			PARTE 2 - TESTE T 
 
 
-##### comparando os gr·ficos gerados nas ultimas aulas com a diferenÁas existentes
+##### comparando os gr√°ficos gerados nas ultimas aulas com a diferen√ßas existentes
 
-- distribuiÁ„o de diferenÁas geradas por aleatorizaÁ„o 
+- distribui√ß√£o de diferen√ßas geradas por aleatoriza√ß√£o 
 
 ```{r}
 hist(difPERMU,col="green",xlim=c(-15,20)) 
@@ -133,7 +133,7 @@ abline(v=mean(difPERMU),col="blue",lty=2,ltw=2,lwd=2)
 ```
 
 
-- PARES DE ALTURAS FORAM COMPARADAS ALEATORIAMENTE, POR…M SEMPRE ENTRE HOMENS E MULHERES!
+- PARES DE ALTURAS FORAM COMPARADAS ALEATORIAMENTE, POR√âM SEMPRE ENTRE HOMENS E MULHERES!
 
 ```{r}
 difpair<-cbind(-5,
@@ -145,7 +145,7 @@ difpair<-cbind(-5,
 ```
 
 
-##### distribuiÁ„o das diferenÁas comparadas entre pares aleatÛrios (porÈm sempre entre homens e mulheres)
+##### distribui√ß√£o das diferen√ßas comparadas entre pares aleat√≥rios (por√©m sempre entre homens e mulheres)
 
 ```{r}
 hist(difPERMU,col="green",xlim=c(-15,20)) 
@@ -173,13 +173,13 @@ length(which(abs(difPERMU)>abs(difOBS)))
 
 
 ##### Teste T
-###### realizando a an·lise de Teste-T na m„o
+###### realizando a an√°lise de Teste-T na m√£o
 ```{r}
 round((difOBS-0)/((5.03 + 4.76)/sqrt(length(tamanho$alturas))),3)
 ```
 
 
-###### utilizando a funÁ„o t.test, disponÌvel no default do R
+###### utilizando a fun√ß√£o t.test, dispon√≠vel no default do R
 
 ```{r}
 p.obs<-t.test(tamanho$alturas~ tamanho$sexo)
@@ -202,7 +202,7 @@ p.obs
 
 ####			PARTE3 - ERROS TIPO 1 E ERROS TIPO 2
 
-###### Podemos tambÈm simular valores de T e compar·-los com as diferenÁas obtidas a partir de diversas aleatorizaÁıes.
+###### Podemos tamb√©m simular valores de T e compar√°-los com as diferen√ßas obtidas a partir de diversas aleatoriza√ß√µes.
 
 ###### simulando valores de T
 ```{r}
@@ -215,7 +215,7 @@ hist(tsPERMU,col="grey90",xlim=c(-5,5))
 
 ```
 
-###### perceba que, assim como a difPERMU, os valores de teste.t tambÈm giram em torno de 0
+###### perceba que, assim como a difPERMU, os valores de teste.t tamb√©m giram em torno de 0
 
 ###### guardando apenas o valor de T do teste T da nossa amostragem
 ```{r}
@@ -280,7 +280,7 @@ abline(v=c(a,b,c,d),col="lightpink",lwd=2)
 
 
 
-###### Calcula o valor crÌtico de diferenÁa na distribuiÁ„o para (alfa e N)
+###### Calcula o valor cr√≠tico de diferen√ßa na distribui√ß√£o para (alfa e N)
 ```{r}
 qt(.95, df = c(1:10,20,50,100,1000))
 qt(.975, df = c(1:10,20,50,100,1000))
