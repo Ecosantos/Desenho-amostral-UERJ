@@ -1,0 +1,320 @@
+---
+title: "Teste T"
+author: "Gabriel Santos"
+date: "15 de outubro de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#			AULA 1 - Distribuições e valores críticos
+
+AINDA UTILIZANDOS OS DADOS REFERENTE ÀS ALTURAS AMOSTRADAS
+```{r, include=FALSE}
+library(bitops)
+library(RCurl)
+tamanho<-read.table(text=getURL("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Dados/altura.txt"),header=T)
+attach(tamanho)
+```
+
+
+```{r, eval=FALSE}
+tamanho<-read.table(file.choose(),header=T)
+attach(tamanho)
+```
+
+
+```{r}
+tamanho<-as.data.frame(tamanho)
+attach(tamanho)
+```
+
+
+```{r}
+medSex<-tapply(tamanho$alturas,tamanho$sexo,mean)
+```
+
+```{r}
+difOBS<-medSex["H"]-medSex["M"]
+```
+
+```{r}
+sample(tamanho$alturas)
+
+difOBS<-medSex["H"]-medSex["M"]
+
+sample(tamanho$alturas)
+
+mediasaleat<-tapply(sample(tamanho$alturas),tamanho$sexo,mean)
+
+mediasaleat["H"]-mediasaleat["M"]
+
+diff(mediasaleat)
+diff(medSex)
+
+```
+
+
+
+#### Modificando a função diff (inversão de sinal)	
+
+
+Iremos trabalhar agora com a função diff modifcada que está disponível no link:
+https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R
+
+Na aula iremos trabalhar passo a passo para editarmos a função original para que ela se adeque ao nosso interesse
+```{r}
+source("https://raw.githubusercontent.com/Ecosantos/Desenho-amostral-UERJ/master/Scripts/diff%20modificada.R")
+```
+
+
+
+Caso queira conferir a diferença entre cada uma das funções, você pode abri-las e compará-las pessoalmente apenas chamando a função
+```{r, echo=FALSE}
+diff.default
+```
+
+```{r, echo=FALSE}
+dif
+```
+
+
+Agora vamos comparar a diferença entre elas
+
+```{r}
+dif(mediasaleat)
+diff(mediasaleat)
+```
+
+Notou a diferença? OK então vamos prosseguir.
+
+
+```{r}
+dif(tapply(sample(tamanho$alturas), tamanho$sexo,mean))
+
+```
+
+```{r}
+difPERMU<- replicate(100, dif(tapply(sample(tamanho$alturas),
+tamanho$sexo,mean)))
+```
+
+
+```{r, echo=F}
+difPERMU
+```
+
+```{r}
+length(which(difPERMU>=difOBS))
+```
+
+```{r}
+sort(difPERMU)
+```
+
+```{r}
+length(which(abs(difPERMU)>abs(difOBS)))
+```
+
+
+####			PARTE 2 - TESTE T 
+
+
+##### comparando os gráficos gerados nas ultimas aulas com a diferenças existentes
+
+- distribuição de diferenças geradas por aleatorização 
+
+```{r}
+hist(difPERMU,col="green",xlim=c(-15,20)) 
+abline(v=mean(difPERMU),col="blue",lty=2,ltw=2,lwd=2)
+
+```
+
+
+- PARES DE ALTURAS FORAM COMPARADAS ALEATORIAMENTE, PORÉM SEMPRE ENTRE HOMENS E MULHERES!
+
+```{r}
+difpair<-cbind(-5,
+9,
+7,
+19,
+13)
+
+```
+
+
+##### distribuição das diferenças comparadas entre pares aleatórios (porém sempre entre homens e mulheres)
+
+```{r}
+hist(difPERMU,col="green",xlim=c(-15,20)) 
+abline(v=mean(difPERMU),col="blue",lty=2,ltw=2,lwd=2)
+
+```
+
+```{r, eval=FALSE}
+hist(difpair,add=T,col="yellow")
+abline(v=difOBS,col="red",lty=2,lwd=2)
+```
+
+```{r, echo=FALSE}
+hist(difPERMU,col="green",xlim=c(-15,20)) 
+abline(v=mean(difPERMU),col="blue",lty=2,ltw=2,lwd=2)
+hist(difpair,add=T,col="yellow")
+abline(v=difOBS,col="red",lty=2,lwd=2)
+```
+
+##### Quantidade de valores de difPERMU acima de difOBS
+```{r}
+length(which(abs(difPERMU)>abs(difOBS)))
+
+```
+
+
+##### Teste T
+###### realizando a análise de Teste-T na mão
+```{r}
+round((difOBS-0)/((5.03 + 4.76)/sqrt(length(tamanho$alturas))),3)
+```
+
+
+###### utilizando a função t.test, disponível no default do R
+
+```{r}
+p.obs<-t.test(tamanho$alturas~ tamanho$sexo)
+
+```
+
+
+```{r}
+p.obs$p.value
+p.obs$estimate
+p.obs$null.value
+
+```
+
+```{r}
+p.obs
+
+```
+
+
+####			PARTE3 - ERROS TIPO 1 E ERROS TIPO 2
+
+###### Podemos também simular valores de T e compará-los com as diferenças obtidas a partir de diversas aleatorizações.
+
+###### simulando valores de T
+```{r}
+tsPERMU = replicate(100,t.test(sample(tamanho$alturas)~ tamanho$sexo)$statistic)
+```
+
+###### plotando valores de T
+```{r}
+hist(tsPERMU,col="grey90",xlim=c(-5,5))
+
+```
+
+###### perceba que, assim como a difPERMU, os valores de teste.t também giram em torno de 0
+
+###### guardando apenas o valor de T do teste T da nossa amostragem
+```{r}
+tsOBS<-t.test(tamanho$alturas~ tamanho$sexo,alternative="greater")$statistic
+
+```
+
+
+
+```{r, eval=F}
+abline(v=tsOBS,lty=2,col="red",lwd=1)
+
+```
+```{r, echo=FALSE}
+hist(tsPERMU,col="grey90",xlim=c(-5,5))
+abline(v=tsOBS,lty=2,col="red",lwd=1)
+```
+
+```{r}
+length(which(tsPERMU>=tsOBS))
+
+```
+
+###### E se o ponto de corte fosse alfa=0.1
+```{r}
+a<-abs(qt(0.01, 10))
+
+```
+
+###### E se o ponto de corte fosse alfa=0.1
+```{r}
+b<-abs(qt(0.001, 10))
+
+```
+
+
+###### E se o ponto de corte fosse alfa=0.1
+```{r}
+c<-abs(qt(0.20, 10))
+
+```
+
+###### E se o ponto de corte fosse alfa=0.1
+```{r}
+d<-abs(qt(0.50, 10))
+
+```
+
+
+```{r, eval=F}
+abline(v=c(a,b,c,d),col="lightpink",lwd=2)
+```
+
+
+```{r, echo=FALSE}
+hist(tsPERMU,col="grey90",xlim=c(-5,5))
+abline(v=tsOBS,lty=2,col="red",lwd=1)
+abline(v=c(a,b,c,d),col="lightpink",lwd=2)
+```
+
+
+
+
+
+###### Calcula o valor crítico de diferença na distribuição para (alfa e N)
+```{r}
+qt(.95, df = c(1:10,20,50,100,1000))
+qt(.975, df = c(1:10,20,50,100,1000))
+qt(.999, df = c(1:10,20,50,100,1000))
+
+```
+
+
+
+
+######			OUTROS PONTOS DE INTERESSE
+
+```{r, include=FALSE}
+tvalue<-t.test(tamanho$alturas~ tamanho$sexo)$statistic
+p.obs<-t.test(tamanho$alturas~tamanho$sexo)
+
+t.test(tamanho$alturas~tamanho$sexo,alternative="greater")
+t.test(tamanho$alturas~tamanho$sexo,alternative="less")
+
+replicate(100,t.test(sample(tamanho$alturas)~ tamanho$sexo))
+
+p.aleat<-replicate(100,t.test(sample(tamanho$alturas)~ tamanho$sexo)[[3]])
+
+hist(p.aleat) 
+ length(which(p.aleat<0.05))
+ 
+ length(which(p.aleat<0.1)) 
+
+ length(which(p.aleat<0.2)) 
+
+
+boxplot(tamanho$altura~as.factor(tamanho$sexo), ylab="Altura (cm)", xlab="Sexo")
+points(tamanho$altura~as.factor(tamanho$sexo), ylab="Altura (cm)", xlab="Sexo",pch=5,cex=2)
+
+```
+
+
