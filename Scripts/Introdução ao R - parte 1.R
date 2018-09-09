@@ -186,4 +186,55 @@ l$Idade
 #criar matrizes (matrix)
 #perguntar qual o tipo de vetor estamos trabalhando (is.factor/is.numeric/is.vector)
 
+
+###    FUNÇÕES
+#"O vocabulário da linguagem R são as funções e comandos"
+# Até o momento já utilizamos diversas funções! Todas bem lógicas e escritas em inglês
+#Usamos funções para:
+#criar data frames (data.frame)
+#criar matrizes (matrix)
+#perguntar qual o tipo de vetor estamos trabalhando (is.factor/is.numeric/is.vector)
+
+
+
+### Exemplo de funções
+
+#vamos criar duas funções de multipla escolha simples:
+# A nossa escolha tem que primeiro ser adicionada em um vector
+# então escolha o seu vetor
+
+x<-"Sim"
+x<-"Não"
+
+
+#Nossa primeira pergunta é: "gosta de cachorros?"
+
+gosta_de_gato<-function(x){					#Cria e especifica a função
+if(x  ==  "Sim"){							#Se "x" for igual a "Sim"	
+print("Você é uma boa pessoa!")				#Retorne essa informação
+} else {								#Caso contrário
+print("Não é possivel, todos gostam de gatos!")		#retorne essa informação
+}
+}
+
+
+gosta_de_gato(x)
+
+#Essa pessoa pode gostar de gatos, mas preferi cachorros por exemplo
+
+x<-"cachorro"
+x<-"gato"
+
+gato_ou_cachorro<-function(x){
+if(x  ==  "gato"){
+print("Sério? cahorros são muito mais companheiros")
+} else if (x=="cachorro"){						
+print("Sério? gatos são muito mais independentes")		
+} else {
+print("responda a pergunta com 'cachorro' ou 'gato'")
+}
+}
+
+gato_ou_cachorro(x)
+
 .
