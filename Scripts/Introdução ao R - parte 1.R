@@ -94,7 +94,18 @@ is.numeric(A)
 is.character(a)
 is.character(A)
 
+###    MULTIPLOS VALORES/MULTIPLAS INFORMAÇÕES
+#Até agora atribuimos uma única informação a um objeto
+# No entanto, na maioria dos casos precisamos de inserir muitas informações em um mesmo objeto
+#Esse objeto pode ser por exemplo numero de espécies registradas em áreas diferentes:
 
+
+vector<-1
+vector<-1,2	#Mas assim ele não funciona, então precisaremos usar a função "c"
+vector<-c(1,2)
+
+#E agora podemos colocar quanta informação quisermos
+vector<-c(1,2,3,4,5,6,7,8,9)
 
 ###    FATORES
 f=factor(c("baixo","médio" ,"alto","mais alto"))
@@ -155,17 +166,17 @@ is.vector(df2$coluna1)
 
 
 ###    LISTA
-l <- list(name="Toyoyo", wife="Rafaela", no.children=2,child.ages=c(2,6))
+l <- list(Curso="Desenho Amostral", Local="UERJ", Alunos=10,Idade=c(19,23,21,22,18,21,20,20,20,25))
 
 l
 
-
+data.frame(l)
 #se quisermos obter apenas uma parcela das informações podemos utilizar o simbolo ($)
 #exemplo
-l$name
-l$wife
-l$no.children
-l$child.ages
+l$Curso
+l$Local
+l$Alunos
+l$Idade
 
 ###    FUNÇÕES
 #"O vocabulário da linguagem R são as funções e comandos"
