@@ -53,3 +53,65 @@ lines(density((rchisq(1000, 1))),col="green")
 
 abline(v=qchisq(.95, GL),col="red",lty=2)
 abline(v=11.42,col="red",lty=2)
+
+
+
+#====================================================================
+#			SCRIPT QUI-QUADRADO NO R - Parte 2
+#	 Aula de desenho amostral 05/12/2018 by Gabriel Santos
+#====================================================================
+
+#Exemplo retirado de:
+https://pt.wikipedia.org/wiki/Equil%C3%ADbrio_de_Hardy-Weinberg
+
+# Mão na massa
+
+rm(list=ls())
+
+#Exemplo
+AA<-1469
+Aa<-138
+aa<-5
+geno<-c(AA,Aa,aa)
+names(geno)<-c("AA","Aa","aa")
+geno
+
+p=(2*AA+Aa)/(2*(AA+Aa+aa))
+q=1-p
+q
+
+AA.exp=sum(geno)*p^2;AA.exp
+Aa.exp=2*p*q*sum(geno);Aa.exp
+aa.exp=sum(geno)*q^2;aa.exp
+
+geno.exp<-c(AA.exp,Aa.exp,aa.exp)
+
+prop.exp<-geno.exp/sum(geno.exp)
+
+chisq.test(geno, geno.exp) 
+
+
+X2obs<-sum(((geno-geno.exp)^2)/geno.exp)
+
+qchisq(.95, 1)
+
+1-pchisq(X2obs, 1)
+
+1-pchisq(0.8309482, 1)
+
+
+#=======================================================================================
+#		CONCLUSÕES
+#=======================================================================================
+REPARE QUE AO COMPARAR O GENÓTIPO OBSERVADO COM A PROPORÇÃO ESPERADA,
+VERIFICAMOS UM ERRRO QUE DIZ " Aproximação do qui-quadrado pode estar incorreta",
+ALÉM DISSO, REPARE QUE O GRAU DE LIBERDADE DO NOSSO QUI-QUADRADO USANDO A FUNÇÃO
+É 4, QUANDO NA VERDADE PELO EQUILÍBRIO DE HARDY=WENSEBERG DEVERIA SER 1.
+
+APESAR DAS NOSSAS CONCLUSÕES NÃO MUDAREM NESSE CASO É MUITO IMPORTANTE 
+QUE ESTEJAMOS CIENTES DO QUE ESTAMOS FAZENDO PARA NÃO FAZER BESTEIRA.
+
+
+
+
+
