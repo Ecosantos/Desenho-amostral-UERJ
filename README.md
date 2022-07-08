@@ -2,7 +2,8 @@
 #### Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
 ---
 >**Note**
->** Disciplina descotinuada**
+> 
+>**Disciplina descotinuada**
 >Apesar na minha atuação na disciplina ter cessado em 2019 o material produzido continua disponivel. Novidades em breve.
 ---
 
