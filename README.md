@@ -1,5 +1,6 @@
 # DESENHO AMOSTRAL
 ### Site da disciplina de desenho amostral ministrada para a graduação em Ciências biológicas 
+#### ---- Descontinuado ---
 Dados, scripts e outros documentos importantes para a disciplina de desenho amostral, ministrada para a graduação em ciências biológicas da UERJ, serão disponibilizados aqui!
 
 
