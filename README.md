@@ -5,7 +5,7 @@
 > 
 >**Disciplina descotinuada**
 >
->Apesar na minha atuação na disciplina ter cessado em 2019 o material produzido continua disponivel. Novidades em breve.
+>**Apesar na minha atuação na disciplina ter cessado em 2019 o material produzido continua disponivel. Novidades em breve.**
 ---
 
 Dados, scripts e outros documentos importantes para a disciplina de desenho amostral, ministrada para a graduação em ciências biológicas da UERJ, serão disponibilizados aqui!
